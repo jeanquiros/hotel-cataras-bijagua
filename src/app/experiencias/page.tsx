@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import ExperienciasGallery from "@/components/ExperienciasGallery";
+import QueHacer from "@/components/QueHacer";
 import Footer from "@/components/Footer";
 
 export default function ExperienciasPage() {
@@ -8,7 +8,7 @@ export default function ExperienciasPage() {
       <Header />
       <main>
         <div className="h-24" />
-        <ExperienciasGallery />
+        <QueHacer />
       </main>
       <Footer />
     </>
