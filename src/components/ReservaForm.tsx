@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CalendarDays, Users, Check, Minus, Plus } from "lucide-react";
+import { CalendarDays, Users, Check } from "lucide-react";
 
 const actividades = [
   { name: "Sendero Cataratas", price: 45 },
@@ -19,7 +19,6 @@ interface Props {
 
 export default function ReservaForm({ cabanaName, cabanaPrice }: Props) {
   const basePrice = parseInt(cabanaPrice.replace("$", ""));
-  const [open, setOpen] = useState(false);
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState(2);
@@ -53,16 +52,7 @@ export default function ReservaForm({ cabanaName, cabanaPrice }: Props) {
         <p className="text-gray-500 text-sm">Desde ${basePrice} por noche</p>
       </div>
 
-      <button
-        onClick={() => setOpen(!open)}
-        className="mx-auto flex items-center gap-3 bg-luxury-gold text-white px-10 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold-dark transition-all duration-300"
-      >
-        {open ? "Cerrar" : `Reservar — $${total}`}
-        {open ? <Minus size={16} /> : <Plus size={16} />}
-      </button>
-
-      {open && (
-        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mt-8 bg-luxury-warm p-8">
+      <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mt-8 bg-luxury-warm p-8">
           {sent ? (
             <div className="text-center py-8">
               <div className="w-14 h-14 mx-auto rounded-full bg-luxury-gold/20 flex items-center justify-center mb-4">
@@ -181,7 +171,6 @@ export default function ReservaForm({ cabanaName, cabanaPrice }: Props) {
             </div>
           )}
         </form>
-      )}
     </div>
   );
 }
