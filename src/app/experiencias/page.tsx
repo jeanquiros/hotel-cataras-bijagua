@@ -1,14 +1,14 @@
 import Header from "@/components/Header";
-import Location from "@/components/Location";
+import ExperienciasGallery from "@/components/ExperienciasGallery";
 import Footer from "@/components/Footer";
 
-export default function LocationPage() {
+export default function ExperienciasPage() {
   return (
     <>
       <Header />
       <main>
         <div className="h-24" />
-        <Location />
+        <ExperienciasGallery />
       </main>
       <Footer />
     </>

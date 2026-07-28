@@ -1,14 +1,14 @@
 import Header from "@/components/Header";
-import Gallery from "@/components/Gallery";
+import BungalowsDetail from "@/components/BungalowsDetail";
 import Footer from "@/components/Footer";
 
-export default function GalleryPage() {
+export default function BungalowsPage() {
   return (
     <>
       <Header />
       <main>
         <div className="h-24" />
-        <Gallery />
+        <BungalowsDetail />
       </main>
       <Footer />
     </>

@@ -1,14 +1,14 @@
 import Header from "@/components/Header";
-import Contact from "@/components/Contact";
+import UbicacionContacto from "@/components/UbicacionContacto";
 import Footer from "@/components/Footer";
 
-export default function ContactPage() {
+export default function UbicacionPage() {
   return (
     <>
       <Header />
       <main>
         <div className="h-24" />
-        <Contact />
+        <UbicacionContacto />
       </main>
       <Footer />
     </>

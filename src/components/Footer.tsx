@@ -8,22 +8,20 @@ export default function Footer() {
               Hotel Cataras Bijagua
             </h3>
             <p className="text-sm leading-relaxed">
-              A luxury eco-lodge on the slopes of Miravalles Volcano. Where
-              nature meets comfort.
+              Un eco-lodge de lujo en las faldas del volcán Miravalles. Donde la naturaleza se encuentra con el confort.
             </p>
           </div>
 
           <div>
             <h3 className="text-white font-heading text-lg font-bold mb-4">
-              Quick Links
+              Enlaces
             </h3>
             <ul className="space-y-2 text-sm">
               {[
-  { label: "About", href: "/about" },
-  { label: "Suites", href: "/suites" },
-  { label: "Experiences", href: "/experiences" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
+  { label: "Inicio", href: "/" },
+  { label: "Bungalows", href: "/bungalows" },
+  { label: "Experiencias", href: "/experiencias" },
+  { label: "Ubicación", href: "/ubicacion" },
 ].map((link) => (
   <li key={link.label}>
     <a
@@ -39,7 +37,7 @@ export default function Footer() {
 
           <div>
             <h3 className="text-white font-heading text-lg font-bold mb-4">
-              Follow Us
+              Síguenos
             </h3>
             <div className="flex gap-4">
               <a

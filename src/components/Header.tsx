@@ -5,13 +5,10 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Suites", href: "/suites" },
-  { label: "Experiences", href: "/experiences" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Location", href: "/location" },
-  { label: "Contact", href: "/contact" },
+  { label: "Inicio", href: "/" },
+  { label: "Bungalows", href: "/bungalows" },
+  { label: "Experiencias", href: "/experiencias" },
+  { label: "Ubicación", href: "/ubicacion" },
 ];
 
 export default function Header() {
