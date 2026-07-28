@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cabanas } from "@/data/cabanas";
 import { ArrowLeft, Wifi, Wind, Coffee, Shield, Tv, Bath, Snowflake, Martini } from "lucide-react";
+import ReservaForm from "@/components/ReservaForm";
 
 const amenityIcons: Record<string, React.ReactNode> = {
   "Cama King-size": <Wind size={16} />,
@@ -104,16 +105,18 @@ export default async function CabanaPage({ params }: { params: Promise<{ slug: s
               </div>
 
               <div className="mt-8">
-                <Link
-                  href="/ubicacion"
-                  className="block w-full text-center border-2 border-luxury-gold text-luxury-gold px-6 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold hover:text-luxury-charcoal transition-all duration-300"
+                <a
+                  href="#reserva"
+                  className="block w-full text-center bg-luxury-gold text-white px-6 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold-dark transition-all duration-300"
                 >
-                  Consultar disponibilidad
-                </Link>
+                  Reservar ahora
+                </a>
               </div>
             </div>
           </div>
         </div>
+
+        <ReservaForm cabanaName={cabana.name} cabanaPrice={cabana.price} />
       </div>
     </main>
   );
