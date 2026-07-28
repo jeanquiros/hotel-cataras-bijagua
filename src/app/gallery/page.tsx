@@ -1,13 +1,14 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function GalleryPage() {
   return (
     <>
       <Header />
       <main>
-        <Hero />
+        <div className="h-24" />
+        <Gallery />
       </main>
       <Footer />
     </>

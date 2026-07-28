@@ -1,13 +1,14 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import Suites from "@/components/Suites";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function SuitesPage() {
   return (
     <>
       <Header />
       <main>
-        <Hero />
+        <div className="h-24" />
+        <Suites />
       </main>
       <Footer />
     </>

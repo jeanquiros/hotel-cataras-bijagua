@@ -1,13 +1,14 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import Location from "@/components/Location";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function LocationPage() {
   return (
     <>
       <Header />
       <main>
-        <Hero />
+        <div className="h-24" />
+        <Location />
       </main>
       <Footer />
     </>

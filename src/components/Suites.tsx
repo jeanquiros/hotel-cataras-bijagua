@@ -59,7 +59,7 @@ export default function Suites() {
                   {suite.desc}
                 </p>
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="inline-block text-sm font-medium uppercase tracking-widest text-luxury-gold border-b border-luxury-gold pb-0.5 hover:text-luxury-gold-dark transition-colors"
                 >
                   Book Now

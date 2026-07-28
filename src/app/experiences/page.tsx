@@ -1,13 +1,14 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import Experiences from "@/components/Experiences";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function ExperiencesPage() {
   return (
     <>
       <Header />
       <main>
-        <Hero />
+        <div className="h-24" />
+        <Experiences />
       </main>
       <Footer />
     </>

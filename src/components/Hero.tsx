@@ -1,8 +1,8 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+    <section className="relative h-screen flex items-center justify-center overflow-hidden"
     >
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -24,12 +24,12 @@ export default function Hero() {
           Where the jungle meets the sky — an intimate luxury eco-lodge on the
           slopes of Miravalles Volcano.
         </p>
-        <a
-          href="#suites"
+        <Link
+          href="/suites"
           className="inline-block border-2 border-luxury-gold text-luxury-gold px-10 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold hover:text-luxury-charcoal transition-all duration-300"
         >
           Explore Suites
-        </a>
+        </Link>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
