@@ -24,8 +24,10 @@ export const cabanas: Cabana[] = [
     amenities: ["Piscina de inmersión", "Ducha de lluvia", "Minibar", "Café artesanal", "Ropa de cama premium", "Aire acondicionado", "TV", "Caja fuerte"],
     images: [
       "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1562771409-1a2b23f0e8f3?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop",
     ],
   },
   {
@@ -41,8 +43,10 @@ export const cabanas: Cabana[] = [
     amenities: ["Hamaca", "Baño al aire libre", "Cafetera", "Productos de bienvenida", "Ventilador de techo", "Cama Queen-size", "Mosquitero", "Secador de pelo"],
     images: [
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1949&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1526778548025-fa2f459b5fe5?q=80&w=2066&auto=format&fit=crop",
     ],
   },
   {
@@ -58,8 +62,10 @@ export const cabanas: Cabana[] = [
     amenities: ["Tina de hidromasaje", "Vista al dosel", "Bata y pantuflas", "Servicio de bienvenida", "Cama King-size con dosel", "Aire acondicionado", "TV", "Mini bar"],
     images: [
       "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1562771409-1a2b23f0e8f3?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1949&auto=format&fit=crop",
     ],
   },
 ];
