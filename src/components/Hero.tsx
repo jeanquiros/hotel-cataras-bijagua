@@ -25,7 +25,7 @@ export default function Hero() {
           slopes of Miravalles Volcano.
         </p>
         <Link
-          href="/bungalows"
+          href="/cabanas"
           className="inline-block border-2 border-luxury-gold text-luxury-gold px-10 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold hover:text-luxury-charcoal transition-all duration-300"
         >
           Ver Bungalows

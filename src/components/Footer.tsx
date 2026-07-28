@@ -19,7 +19,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {[
   { label: "Inicio", href: "/" },
-  { label: "Bungalows", href: "/bungalows" },
+  { label: "Cabañas", href: "/cabanas" },
   { label: "Experiencias", href: "/experiencias" },
   { label: "Ubicación", href: "/ubicacion" },
 ].map((link) => (

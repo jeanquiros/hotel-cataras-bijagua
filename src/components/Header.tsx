@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Inicio", href: "/" },
-  { label: "Bungalows", href: "/bungalows" },
+  { label: "Cabañas", href: "/cabanas" },
   { label: "Experiencias", href: "/experiencias" },
   { label: "Ubicación", href: "/ubicacion" },
 ];
