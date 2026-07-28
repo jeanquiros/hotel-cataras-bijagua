@@ -65,8 +65,24 @@ export default async function CabanaPage({ params }: { params: Promise<{ slug: s
 
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-5 gap-12">
+          <div className="md:col-span-3">
+            <h2 className="font-heading text-2xl font-bold text-luxury-charcoal mb-4">Acerca de esta cabaña</h2>
+            <p className="text-gray-600 leading-relaxed text-lg">{cabana.fullDesc}</p>
+
+            <div className="mt-10">
+              <h3 className="font-heading text-xl font-bold text-luxury-charcoal mb-5">Galería</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {cabana.images.map((src, i) => (
+                  <div key={i}
+                    className={`bg-cover bg-center rounded-sm ${i === 0 ? "col-span-2 aspect-[16/7]" : "aspect-square"}`}
+                    style={{ backgroundImage: `url('${src}')` }} />
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="md:col-span-2">
-            <div className="bg-luxury-warm p-8">
+            <div className="bg-luxury-warm p-8 sticky top-28">
               <h3 className="font-heading text-lg font-bold text-luxury-charcoal mb-5">Amenidades</h3>
               <ul className="space-y-4">
                 {cabana.amenities.map((a) => (
@@ -90,22 +106,13 @@ export default async function CabanaPage({ params }: { params: Promise<{ slug: s
                 <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Precio por noche</p>
                 <p className="font-heading text-3xl font-bold text-luxury-gold">${numericPrice}</p>
               </div>
-            </div>
-          </div>
 
-          <div className="md:col-span-3">
-            <h2 className="font-heading text-2xl font-bold text-luxury-charcoal mb-4">Acerca de esta cabaña</h2>
-            <p className="text-gray-600 leading-relaxed text-lg">{cabana.fullDesc}</p>
-
-            <div className="mt-10">
-              <h3 className="font-heading text-xl font-bold text-luxury-charcoal mb-5">Galería</h3>
-              <div className="grid grid-cols-2 gap-3">
-                {cabana.images.map((src, i) => (
-                  <div key={i}
-                    className={`bg-cover bg-center rounded-sm ${i === 0 ? "col-span-2 aspect-[16/7]" : "aspect-square"}`}
-                    style={{ backgroundImage: `url('${src}')` }} />
-                ))}
-              </div>
+              <a
+                href="#reserva"
+                className="mt-6 block w-full text-center bg-luxury-gold text-white px-6 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold-dark transition-all duration-300"
+              >
+                Reservar — ${numericPrice}
+              </a>
             </div>
           </div>
         </div>
