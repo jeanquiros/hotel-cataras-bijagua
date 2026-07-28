@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { CalendarDays, Users, ChevronDown, ChevronUp, Check } from "lucide-react";
+import { CalendarDays, Users, Check, Minus, Plus } from "lucide-react";
 
 const actividades = [
-  "Sendero Cataratas",
-  "Río Celeste",
-  "Observación de Aves",
-  "Caminata Nocturna",
-  "Aguas Termales",
-  "Yoga al Atardecer",
+  { name: "Sendero Cataratas", price: 45 },
+  { name: "Río Celeste", price: 65 },
+  { name: "Observación de Aves", price: 35 },
+  { name: "Caminata Nocturna", price: 40 },
+  { name: "Aguas Termales", price: 30 },
+  { name: "Yoga al Atardecer", price: 25 },
 ];
 
 interface Props {
@@ -18,18 +18,26 @@ interface Props {
 }
 
 export default function ReservaForm({ cabanaName, cabanaPrice }: Props) {
+  const basePrice = parseInt(cabanaPrice.replace("$", ""));
   const [open, setOpen] = useState(false);
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
-  const [guests, setGuests] = useState("2");
+  const [guests, setGuests] = useState(2);
   const [selected, setSelected] = useState<string[]>([]);
   const [sent, setSent] = useState(false);
 
-  const toggleActividad = (a: string) => {
+  const toggleActividad = (name: string) => {
     setSelected((prev) =>
-      prev.includes(a) ? prev.filter((x) => x !== a) : [...prev, a]
+      prev.includes(name) ? prev.filter((x) => x !== name) : [...prev, name]
     );
   };
+
+  const tourTotal = selected.reduce((sum, name) => {
+    const act = actividades.find((a) => a.name === name);
+    return sum + (act?.price || 0);
+  }, 0);
+
+  const total = basePrice + tourTotal;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,15 +50,15 @@ export default function ReservaForm({ cabanaName, cabanaPrice }: Props) {
         <h3 className="font-heading text-2xl font-bold text-luxury-charcoal mb-2">
           Reservar {cabanaName}
         </h3>
-        <p className="text-gray-500 text-sm">{cabanaPrice} por noche</p>
+        <p className="text-gray-500 text-sm">Desde ${basePrice} por noche</p>
       </div>
 
       <button
         onClick={() => setOpen(!open)}
-        className="mx-auto flex items-center gap-3 border-2 border-luxury-gold text-luxury-gold px-10 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold hover:text-luxury-charcoal transition-all duration-300"
+        className="mx-auto flex items-center gap-3 bg-luxury-gold text-white px-10 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold-dark transition-all duration-300"
       >
-        {open ? "Cerrar" : "Reservar ahora"}
-        {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        {open ? "Cerrar" : `Reservar — $${total}`}
+        {open ? <Minus size={16} /> : <Plus size={16} />}
       </button>
 
       {open && (
@@ -86,27 +94,58 @@ export default function ReservaForm({ cabanaName, cabanaPrice }: Props) {
                 <label className="block text-xs text-gray-500 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
                   <Users size={14} /> Huéspedes
                 </label>
-                <select value={guests} onChange={(e) => setGuests(e.target.value)}
-                  className="w-full bg-white border border-gray-200 px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-luxury-gold transition-colors">
+                <div className="flex items-center gap-3">
                   {[1, 2, 3, 4, 5, 6].map((n) => (
-                    <option key={n} value={n}>{n} {n === 1 ? "huésped" : "huéspedes"}</option>
+                    <button type="button" key={n} onClick={() => setGuests(n)}
+                      className={`w-10 h-10 text-sm font-medium border transition-colors ${
+                        guests === n
+                          ? "bg-luxury-gold text-white border-luxury-gold"
+                          : "bg-white text-gray-600 border-gray-200 hover:border-gray-300"
+                      }`}>
+                      {n}
+                    </button>
                   ))}
-                </select>
+                </div>
               </div>
 
               <div>
                 <p className="text-xs text-gray-500 uppercase tracking-wider mb-3">Itinerario — Actividades</p>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="space-y-2">
                   {actividades.map((a) => (
-                    <button type="button" key={a} onClick={() => toggleActividad(a)}
-                      className={`text-left text-sm px-3 py-2 border transition-colors ${
-                        selected.includes(a)
+                    <button type="button" key={a.name} onClick={() => toggleActividad(a.name)}
+                      className={`w-full flex items-center justify-between text-sm px-4 py-3 border transition-colors ${
+                        selected.includes(a.name)
                           ? "border-luxury-gold bg-luxury-gold/10 text-luxury-charcoal"
                           : "border-gray-200 bg-white text-gray-600 hover:border-gray-300"
                       }`}>
-                      {a}
+                      <span>{a.name}</span>
+                      <span className="font-medium">${a.price}</span>
                     </button>
                   ))}
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 p-4">
+                <div className="flex justify-between text-sm text-gray-600 mb-1">
+                  <span>{cabanaName}</span>
+                  <span>${basePrice}</span>
+                </div>
+                {selected.length > 0 && (
+                  <div className="border-t border-gray-100 pt-2 mb-2">
+                    {selected.map((s) => {
+                      const act = actividades.find((a) => a.name === s);
+                      return (
+                        <div key={s} className="flex justify-between text-sm text-gray-500">
+                          <span className="text-xs">Tour: {s}</span>
+                          <span>${act?.price}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+                <div className="border-t border-gray-200 pt-2 flex justify-between font-bold text-luxury-charcoal">
+                  <span>Total</span>
+                  <span>${total}</span>
                 </div>
               </div>
 
@@ -137,7 +176,7 @@ export default function ReservaForm({ cabanaName, cabanaPrice }: Props) {
 
               <button type="submit"
                 className="w-full bg-luxury-gold text-white py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold-dark transition-colors">
-                Enviar solicitud
+                Enviar solicitud — ${total}
               </button>
             </div>
           )}
