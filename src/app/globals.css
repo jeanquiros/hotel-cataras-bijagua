@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/500.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+@theme inline {
+  --color-luxury-gold: #C6A962;
+  --color-luxury-gold-light: #D4BC7E;
+  --color-luxury-gold-dark: #A88D4E;
+  --color-luxury-charcoal: #1A1A1A;
+  --color-luxury-dark: #2C2C2C;
+  --color-luxury-cream: #FAF8F3;
+  --color-luxury-warm: #F5F0E8;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+}
