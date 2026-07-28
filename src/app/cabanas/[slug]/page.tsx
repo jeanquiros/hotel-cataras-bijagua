@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { cabanas } from "@/data/cabanas";
 import { ArrowLeft, Wifi, Wind, Coffee, Shield, Tv, Bath, Snowflake, Martini } from "lucide-react";
-import ReservaForm from "@/components/ReservaForm";
+
 
 const amenityIcons: Record<string, React.ReactNode> = {
   "Cama King-size": <Wind size={18} />,
@@ -45,7 +47,9 @@ export default async function CabanaPage({ params }: { params: Promise<{ slug: s
   const numericPrice = parseInt(cabana.price.replace("$", ""));
 
   return (
-    <main className="bg-white">
+    <>
+      <Header />
+      <main className="bg-white">
       <div className="relative h-[55vh] md:h-[65vh] bg-cover bg-center" style={{ backgroundImage: `url('${cabana.image}')` }}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
         <div className="absolute top-6 left-6 z-10">
@@ -82,7 +86,7 @@ export default async function CabanaPage({ params }: { params: Promise<{ slug: s
           </div>
 
           <div className="md:col-span-2">
-            <div className="bg-luxury-warm p-8 sticky top-28">
+            <div className="bg-luxury-warm p-8">
               <h3 className="font-heading text-lg font-bold text-luxury-charcoal mb-5">Amenidades</h3>
               <ul className="space-y-4">
                 {cabana.amenities.map((a) => (
@@ -108,7 +112,7 @@ export default async function CabanaPage({ params }: { params: Promise<{ slug: s
               </div>
 
               <a
-                href="#reserva"
+                href="/ubicacion"
                 className="mt-6 block w-full text-center bg-luxury-gold text-white px-6 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold-dark transition-all duration-300"
               >
                 Reservar — ${numericPrice}
@@ -116,9 +120,9 @@ export default async function CabanaPage({ params }: { params: Promise<{ slug: s
             </div>
           </div>
         </div>
-
-        <ReservaForm cabanaName={cabana.name} cabanaPrice={cabana.price} />
       </div>
     </main>
+      <Footer />
+    </>
   );
 }
