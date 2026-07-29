@@ -1,26 +1,7 @@
-"use client";
-
-import { useState } from "react";
-
-const rooms = [
-  {
-    id: 1,
-    name: "Bungalow Familiar #1",
-    desc: "Capacidad para 6 personas · Cocina · Baño · Porche con hamaca",
-    cover: "/images/habitacion-uno/IMG_20210523_123800.jpg",
-    images: [
-      "/images/habitacion-uno/IMG_20210523_123800.jpg",
-      "/images/habitacion-uno/IMG_20240411_091200.jpg",
-      "/images/habitacion-uno/IMG_20240411_091519.jpg",
-      "/images/habitacion-uno/IMG_20240411_091744.jpg",
-      "/images/habitacion-uno/IMG_9588.JPG",
-    ],
-  },
-];
+import Link from "next/link";
+import { cabanas } from "@/data/cabanas";
 
 export default function Cabanas() {
-  const [open, setOpen] = useState<number | null>(null);
-
   return (
     <>
       <header className="hero" style={{ height: "50vh", minHeight: "350px", alignItems: "flex-end" }}>
@@ -32,43 +13,96 @@ export default function Cabanas() {
       </header>
 
       <section className="tight">
-        <div className="wrap" style={{ maxWidth: "800px", margin: "0 auto" }}>
-          {rooms.map((room) => (
-            <div key={room.id}>
-              <div className="photo-block" style={{ height: "420px", minHeight: 0 }}>
-                <img src={room.cover} alt={room.name} loading="lazy" referrerPolicy="no-referrer" />
-              </div>
-
-              <div style={{ padding: "28px 0", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px" }}>
-                <div>
-                  <p style={{ fontFamily: "'Fraunces', serif", fontSize: "1.4rem", fontWeight: 400, letterSpacing: "-0.01em", lineHeight: 1.08 }}>{room.name}</p>
-                  <p style={{ color: "var(--text-soft-dark)", fontSize: "0.88rem", fontWeight: 300, marginTop: "4px" }}>{room.desc}</p>
+        <div className="wrap" style={{ maxWidth: 0, padding: 0 }}>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))",
+            gap: 0,
+          }}>
+            {cabanas.map((room) => (
+              <div key={room.slug} style={{
+                position: "relative",
+                borderRight: "1px solid rgba(0,0,0,0.06)",
+                borderBottom: "1px solid rgba(0,0,0,0.06)",
+              }}>
+                <div className="photo-block" style={{ height: "300px", minHeight: 0 }}>
+                  <img src={room.cover} alt={room.name} loading="lazy" referrerPolicy="no-referrer" />
                 </div>
-                <button
-                  onClick={() => setOpen(open === room.id ? null : room.id)}
-                  className="btn"
-                  style={{ cursor: "pointer", border: "none", fontSize: "0.7rem", padding: "14px 32px" }}
-                >
-                  {open === room.id ? "Cerrar" : "Ver cabaña"}
-                </button>
-              </div>
-
-              {open === room.id && (
-                <div style={{ paddingBottom: "48px" }}>
-                  <div className="gallery" style={{ marginTop: "12px" }}>
-                    {room.images.map((src, i) => (
-                      <div key={i} className={i === 0 ? "g1" : i === 1 ? "g2" : i === 2 ? "g3" : i === 3 ? "g4" : "g3"} style={i === 4 ? { gridColumn: "span 2" } : {}}>
-                        <img src={src} alt={`${room.name} - ${i + 1}`} loading="lazy" />
-                      </div>
-                    ))}
+                <div style={{ padding: "24px 28px 32px" }}>
+                  <div style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    marginBottom: "8px",
+                  }}>
+                    <span style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: "0.65rem",
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      color: "var(--gold)",
+                      fontWeight: 500,
+                    }}>
+                      {room.tag}
+                    </span>
+                    <span style={{
+                      fontFamily: "'Fraunces', serif",
+                      fontSize: "1.2rem",
+                      fontWeight: 400,
+                      color: "var(--ink)",
+                      lineHeight: 1,
+                    }}>
+                      {room.price}
+                      <span style={{ fontSize: "0.75rem", fontWeight: 300, color: "var(--text-soft-dark)" }}>/noche</span>
+                    </span>
                   </div>
-                  <p style={{ color: "var(--text-soft-dark)", fontSize: "0.95rem", fontWeight: 300, lineHeight: "1.7", marginTop: "24px" }}>
-                    Este bungalow familiar tiene capacidad para hasta 6 personas, con cocina equipada, baño privado, agua caliente y un porche con hamaca con vista al jardín. Ropa de cama, toallas y café de la casa incluidos. Ideal para familias o grupos pequeños que buscan tranquilidad en la montaña.
+                  <h3 style={{
+                    fontFamily: "'Fraunces', serif",
+                    fontSize: "1.3rem",
+                    fontWeight: 400,
+                    letterSpacing: "-0.01em",
+                    lineHeight: 1.08,
+                    margin: "0 0 8px",
+                  }}>
+                    {room.name}
+                  </h3>
+                  <p style={{
+                    color: "var(--text-soft-dark)",
+                    fontSize: "0.85rem",
+                    fontWeight: 300,
+                    lineHeight: "1.6",
+                    margin: "0 0 6px",
+                  }}>
+                    {room.desc}
                   </p>
+                  <p style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: "0.6rem",
+                    letterSpacing: "0.04em",
+                    color: "var(--text-soft-dark)",
+                    margin: "0 0 20px",
+                    opacity: 0.6,
+                  }}>
+                    {room.info}
+                  </p>
+                  <Link
+                    href={`/cabanas/${room.slug}`}
+                    className="btn"
+                    style={{
+                      display: "inline-block",
+                      cursor: "pointer",
+                      border: "none",
+                      fontSize: "0.7rem",
+                      padding: "14px 32px",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Ver cabaña
+                  </Link>
                 </div>
-              )}
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

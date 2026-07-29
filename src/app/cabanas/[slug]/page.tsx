@@ -1,40 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { cabanas } from "@/data/cabanas";
-import Galeria from "@/components/Galeria";
-import { FadeUp, SlideLeft, SlideRight, StaggerContainer, StaggerItem } from "@/components/Animations";
-import { Wifi, Wind, Coffee, Shield, Tv, Bath, Snowflake, Martini } from "lucide-react";
-
-const amenityIcons: Record<string, React.ReactNode> = {
-  "Cama King-size": <Wind size={18} />,
-  "Cama King-size con dosel": <Wind size={18} />,
-  "Cama Queen-size": <Wind size={18} />,
-  "Terraza privada": <Wind size={18} />,
-  "Ducha interior-exterior": <Bath size={18} />,
-  "Ducha de lluvia": <Bath size={18} />,
-  WiFi: <Wifi size={18} />,
-  "Aire acondicionado": <Snowflake size={18} />,
-  Minibar: <Martini size={18} />,
-  "Mini bar": <Martini size={18} />,
-  "Café artesanal": <Coffee size={18} />,
-  "Ropa de cama premium": <Wind size={18} />,
-  TV: <Tv size={18} />,
-  "Caja fuerte": <Shield size={18} />,
-  "Piscina de inmersión": <Bath size={18} />,
-  Hamaca: <Wind size={18} />,
-  "Baño al aire libre": <Bath size={18} />,
-  Cafetera: <Coffee size={18} />,
-  "Productos de bienvenida": <Coffee size={18} />,
-  "Ventilador de techo": <Wind size={18} />,
-  Mosquitero: <Wind size={18} />,
-  "Secador de pelo": <Wind size={18} />,
-  "Bata y pantuflas": <Wind size={18} />,
-  "Servicio de bienvenida": <Coffee size={18} />,
-  "Vista al dosel": <Wind size={18} />,
-  "Tina de hidromasaje": <Bath size={18} />,
-};
 
 export function generateStaticParams() {
   return cabanas.map((c) => ({ slug: c.slug }));
@@ -42,107 +8,148 @@ export function generateStaticParams() {
 
 export default async function CabanaPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const cabana = cabanas.find((c) => c.slug === slug);
-  if (!cabana) notFound();
+  const room = cabanas.find((c) => c.slug === slug);
+  if (!room) notFound();
 
-  const numericPrice = parseInt(cabana.price.replace("$", ""));
-  const related = cabanas.filter((c) => c.slug !== slug);
+  const related = cabanas.filter((c) => c.slug !== slug).slice(0, 3);
 
   return (
     <>
-      <Header />
-      <main className="bg-white">
-        <div className="relative h-[55vh] md:h-[65vh] bg-cover bg-center" style={{ backgroundImage: `url('${cabana.image}')` }}>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
-          <div className="absolute bottom-0 left-0 right-0 max-w-6xl mx-auto px-6 pb-12">
-            <div className="flex items-center gap-2 text-white/50 text-xs uppercase tracking-wider mb-3">
-              <Link href="/" className="hover:text-luxury-gold transition-colors">Inicio</Link>
-              <span>/</span>
-              <Link href="/cabanas" className="hover:text-luxury-gold transition-colors">Cabañas</Link>
-              <span>/</span>
-              <span className="text-white/80">{cabana.name}</span>
+      <header className="hero" style={{ height: "55vh", minHeight: "400px", alignItems: "flex-end" }}>
+        <div className="hero-content" style={{ paddingBottom: "56px" }}>
+          <p className="eyebrow">Alojamiento</p>
+          <h1>{room.name}</h1>
+          <p className="hero-sub">{room.desc}</p>
+        </div>
+      </header>
+
+      <section className="tight">
+        <div className="wrap" style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", marginBottom: "32px" }}>
+            <div>
+              <span style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: "0.65rem",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "var(--gold)",
+                fontWeight: 500,
+              }}>
+                {room.tag}
+              </span>
+              <p style={{
+                fontFamily: "'Fraunces', serif",
+                fontSize: "1.2rem",
+                fontWeight: 400,
+                color: "var(--ink)",
+                margin: "6px 0 0",
+              }}>
+                {room.price}
+                <span style={{ fontSize: "0.75rem", fontWeight: 300, color: "var(--text-soft-dark)" }}> / noche</span>
+              </p>
+              <p style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: "0.6rem",
+                letterSpacing: "0.04em",
+                color: "var(--text-soft-dark)",
+                margin: "4px 0 0",
+                opacity: 0.6,
+              }}>
+                {room.info}
+              </p>
             </div>
-            <p className="text-luxury-gold text-sm uppercase tracking-[0.25em] mb-3">Cabaña</p>
-            <h1 className="text-5xl md:text-7xl font-heading font-bold text-white">{cabana.name}</h1>
-            <div className="flex items-center gap-4 mt-4">
-              <span className="text-luxury-gold font-heading text-3xl font-bold">{cabana.price}</span>
-              <span className="text-white/60 text-sm">/ noche</span>
+            <Link
+              href={`https://wa.me/50689374687?text=Hola! Quiero reservar ${room.name}`}
+              className="btn"
+              style={{
+                display: "inline-block",
+                cursor: "pointer",
+                border: "none",
+                fontSize: "0.7rem",
+                padding: "14px 32px",
+                textDecoration: "none",
+              }}
+            >
+              Reservar por WhatsApp
+            </Link>
+          </div>
+
+          {room.images.length > 0 && (
+            <div className="gallery" style={{ marginBottom: "40px" }}>
+              {room.images.map((src, i) => (
+                <div key={i} className={
+                  i === 0 ? "g1" :
+                  i === 1 ? "g2" :
+                  i === 2 ? "g3" :
+                  i === 3 ? "g4" : "g3"
+                } style={i === 4 ? { gridColumn: "span 2" } : {}}>
+                  <img src={src} alt={`${room.name} - ${i + 1}`} loading="lazy" />
+                </div>
+              ))}
             </div>
+          )}
+
+          <div style={{
+            borderTop: "1px solid var(--line-light)",
+            paddingTop: "32px",
+            marginBottom: "48px",
+          }}>
+            <p style={{
+              color: "var(--text-soft-dark)",
+              fontSize: "1rem",
+              fontWeight: 300,
+              lineHeight: "1.8",
+              margin: 0,
+            }}>
+              {room.fullDesc}
+            </p>
           </div>
         </div>
+      </section>
 
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="grid md:grid-cols-5 gap-12">
-            <SlideLeft className="md:col-span-3">
-              <div>
-                <h2 className="font-heading text-2xl font-bold text-luxury-charcoal mb-4">Acerca de esta cabaña</h2>
-                <p className="text-gray-600 leading-relaxed text-lg">{cabana.fullDesc}</p>
-
-                <div className="mt-10">
-                  <h3 className="font-heading text-xl font-bold text-luxury-charcoal mb-5">Galería</h3>
-                  <Galeria images={cabana.images} />
-                </div>
-              </div>
-            </SlideLeft>
-
-            <SlideRight className="md:col-span-2">
-              <div className="bg-luxury-warm p-8">
-                <h3 className="font-heading text-lg font-bold text-luxury-charcoal mb-5">Amenidades</h3>
-                <ul className="space-y-4">
-                  {cabana.amenities.map((a) => (
-                    <li key={a} className="flex items-center gap-3 text-sm text-gray-700">
-                      <span className="text-luxury-gold shrink-0">{amenityIcons[a] || <Wind size={18} />}</span>
-                      {a}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="border-t border-gray-200 mt-6 pt-6">
-                  <h4 className="font-heading text-base font-bold text-luxury-charcoal mb-3">Características</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {cabana.features.map((f) => (
-                      <span key={f} className="text-xs bg-white px-3 py-1.5 text-gray-600 border border-gray-200">{f}</span>
-                    ))}
+      {related.length > 0 && (
+        <section className="tight" style={{ borderTop: "1px solid var(--ivory-2)" }}>
+          <div className="wrap" style={{ maxWidth: "800px", margin: "0 auto" }}>
+            <p style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "0.65rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "var(--gold)",
+              fontWeight: 500,
+              marginBottom: "24px",
+            }}>
+              Otras cabañas
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "24px" }}>
+              {related.map((c) => (
+                <Link key={c.slug} href={`/cabanas/${c.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
+                  <div className="photo-block" style={{ height: "180px", minHeight: 0 }}>
+                    <img src={c.cover} alt={c.name} loading="lazy" referrerPolicy="no-referrer" />
                   </div>
-                </div>
-
-                <div className="border-t border-gray-200 mt-6 pt-6">
-                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Precio por noche</p>
-                  <p className="font-heading text-3xl font-bold text-luxury-gold">${numericPrice}</p>
-                </div>
-
-
-              </div>
-            </SlideRight>
-          </div>
-        </div>
-
-        <FadeUp>
-          <section className="border-t border-gray-100 py-20 px-6 bg-luxury-warm">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <p className="text-luxury-gold text-sm font-medium uppercase tracking-[0.25em] mb-3">Cabañas</p>
-                <h2 className="text-3xl font-heading font-bold text-luxury-charcoal">Otras cabañas</h2>
-                <div className="w-12 h-0.5 bg-luxury-gold mx-auto mt-3" />
-              </div>
-              <StaggerContainer className="grid md:grid-cols-3 gap-6">
-                {related.map((c) => (
-                  <StaggerItem key={c.slug}>
-                    <Link href={`/cabanas/${c.slug}`} className="group block">
-                      <div className="aspect-[4/3] bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('${c.image}')` }} />
-                      <div className="p-4 bg-white">
-                        <h3 className="font-heading font-bold text-luxury-charcoal group-hover:text-luxury-gold transition-colors">{c.name}</h3>
-                        <span className="text-luxury-gold text-sm font-heading font-bold">{c.price}</span>
-                      </div>
-                    </Link>
-                  </StaggerItem>
-                ))}
-              </StaggerContainer>
+                  <p style={{
+                    fontFamily: "'Fraunces', serif",
+                    fontSize: "1rem",
+                    fontWeight: 400,
+                    margin: "12px 0 4px",
+                  }}>
+                    {c.name}
+                  </p>
+                  <p style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: "0.6rem",
+                    letterSpacing: "0.04em",
+                    color: "var(--gold)",
+                    margin: 0,
+                  }}>
+                    {c.price}/noche
+                  </p>
+                </Link>
+              ))}
             </div>
-          </section>
-        </FadeUp>
-      </main>
-      <Footer />
+          </div>
+        </section>
+      )}
     </>
   );
 }
