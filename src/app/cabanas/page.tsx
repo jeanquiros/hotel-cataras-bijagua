@@ -110,7 +110,7 @@ export default function Cabanas() {
                     <span>{room.info}</span>
                   </div>
                   <Link
-                    href={`/cabanas/${room.slug}`}
+                    href="#"
                     style={{
                       display: "flex",
                       alignItems: "center",

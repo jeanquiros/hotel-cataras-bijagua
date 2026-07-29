@@ -71,7 +71,7 @@ export default async function CabanaPage({ params }: { params: Promise<{ slug: s
               </p>
             </div>
             <Link
-              href={`https://wa.me/50689374687?text=Hola! Quiero reservar ${room.name}`}
+              href={"#"}
               className="btn"
               style={{
                 display: "inline-flex",
@@ -145,7 +145,7 @@ export default async function CabanaPage({ params }: { params: Promise<{ slug: s
             {related.map((c) => (
               <Link
                 key={c.slug}
-                href={`/cabanas/${c.slug}`}
+                href={"#"}
                 style={{ textDecoration: "none", color: "inherit" }}
                 className="related-card"
               >
