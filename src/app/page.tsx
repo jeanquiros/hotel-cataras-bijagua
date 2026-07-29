@@ -106,7 +106,7 @@ export default function Home() {
       </div>
 
       {/* RESTAURANTE */}
-      <div className="split reverse" id="restaurante">
+      <div className="split" id="restaurante">
         <div className="copy">
           <p className="eyebrow on-dark">Restaurante</p>
           <h2>Cocina típica, productos locales</h2>
