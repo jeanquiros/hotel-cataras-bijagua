@@ -8,7 +8,7 @@ export default function Cabanas() {
         <div className="hero-content" style={{ paddingBottom: "56px" }}>
           <p className="eyebrow">Alojamiento</p>
           <h1>Bungalows en el bosque</h1>
-          <p className="hero-sub">Seis espacios independientes, cada uno con su propia hamaca y vista a la montaña. La tranquilidad se respira aquí.</p>
+          <p className="hero-sub">Tres espacios independientes, cada uno con su propia hamaca y vista a la montaña. La tranquilidad se respira aquí.</p>
         </div>
       </header>
 
