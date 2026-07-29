@@ -162,28 +162,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA + FOOTER */}
-      <section className="cta" id="reservar">
-        <div className="wrap">
-          <div className="cta-inner">
-            <p className="eyebrow on-dark" style={{ justifyContent: "center" }}>Reservas</p>
-            <h2>Seis bungalows. Dos volcanes. Una sola vez que llegas.</h2>
-            <p>Escríbenos directamente para consultar disponibilidad y tarifas — sin intermediarios.</p>
-            <a href="tel:+50689374687" className="btn">+506 8937 4687</a>
-            <a href="tel:+50685170327" className="btn-outline">+506 8517 0327</a>
+      {/* FOOTER */}
+      <footer style={{ background: "var(--ink-2)", padding: "34px 0", borderTop: "1px solid var(--line-dark)" }}>
+        <div className="wrap" style={{ display: "flex", justifyContent: "space-between", width: "100%", flexWrap: "wrap", gap: "14px", alignItems: "center" }}>
+          <span>Cataratas Bijagua Lodge · Upala, Costa Rica · Desde 2004</span>
+          <div className="social">
+            <a href="https://www.facebook.com/CataratasBijaguaLodge/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/cataratasbijagualodge/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.tripadvisor.com/Hotel_Review-g666791-d3468908-Reviews-Cataratas_Bijagua_Lodge-Bijagua_de_Upala_Province_of_Alajuela.html" target="_blank" rel="noopener">TripAdvisor</a>
           </div>
         </div>
-        <footer style={{ background: "var(--ink-2)", padding: "34px 0", borderTop: "1px solid var(--line-dark)" }}>
-          <div className="wrap" style={{ display: "flex", justifyContent: "space-between", width: "100%", flexWrap: "wrap", gap: "14px", alignItems: "center" }}>
-            <span>Cataratas Bijagua Lodge · Upala, Costa Rica · Desde 2004</span>
-            <div className="social">
-              <a href="https://www.facebook.com/CataratasBijaguaLodge/" target="_blank" rel="noopener">Facebook</a>
-              <a href="https://www.instagram.com/cataratasbijagualodge/" target="_blank" rel="noopener">Instagram</a>
-              <a href="https://www.tripadvisor.com/Hotel_Review-g666791-d3468908-Reviews-Cataratas_Bijagua_Lodge-Bijagua_de_Upala_Province_of_Alajuela.html" target="_blank" rel="noopener">TripAdvisor</a>
-            </div>
-          </div>
-        </footer>
-      </section>
+      </footer>
     </>
   );
 }
