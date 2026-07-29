@@ -121,12 +121,12 @@ export default function Home() {
       </section>
 
       {/* GALLERY */}
-      <section className="tight">
-        <div className="wrap" style={{ marginBottom: "52px" }}>
+      <section className="tight" style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <div className="wrap" style={{ marginBottom: "52px", paddingLeft: "40px", paddingRight: "40px" }}>
           <p className="eyebrow">Galería</p>
           <h2 style={{ fontSize: "clamp(1.9rem, 3.4vw, 2.6rem)", maxWidth: "24ch" }}>Lo que se ve desde aquí</h2>
         </div>
-        <div className="gallery wrap" style={{ maxWidth: "1220px" }}>
+        <div className="gallery">
           <div className="g1">
             <img src="https://s3-cdn.hotellinksolutions.com/hls/data/5542/gallery/thumbs/full_5_1643215283.jpg" alt="Bosque nuboso, Bijagua" loading="lazy" referrerPolicy="no-referrer" />
           </div>
@@ -162,10 +162,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA + FOOTER */}
-      <section className="cta" id="reservar">
+      {/* CTA */}
+      <section className="cta" id="reservar" style={{ paddingBottom: "90px" }}>
         <div className="wrap">
-          <div className="cta-inner">
+          <div className="cta-inner" style={{ paddingBottom: 0 }}>
             <p className="eyebrow on-dark" style={{ justifyContent: "center" }}>Reservas</p>
             <h2>Seis bungalows. Dos volcanes. Una sola vez que llegas.</h2>
             <p>Escríbenos directamente para consultar disponibilidad y tarifas — sin intermediarios.</p>
@@ -173,17 +173,19 @@ export default function Home() {
             <a href="tel:+50685170327" className="btn-outline">+506 8517 0327</a>
           </div>
         </div>
-        <footer>
-          <div className="wrap" style={{ display: "flex", justifyContent: "space-between", width: "100%", flexWrap: "wrap", gap: "14px", alignItems: "center" }}>
-            <span>Cataratas Bijagua Lodge · Upala, Costa Rica · Desde 2004</span>
-            <div className="social">
-              <a href="https://www.facebook.com/CataratasBijaguaLodge/" target="_blank" rel="noopener">Facebook</a>
-              <a href="https://www.instagram.com/cataratasbijagualodge/" target="_blank" rel="noopener">Instagram</a>
-              <a href="https://www.tripadvisor.com/Hotel_Review-g666791-d3468908-Reviews-Cataratas_Bijagua_Lodge-Bijagua_de_Upala_Province_of_Alajuela.html" target="_blank" rel="noopener">TripAdvisor</a>
-            </div>
-          </div>
-        </footer>
       </section>
+
+      {/* FOOTER */}
+      <footer style={{ background: "var(--ink-2)", padding: "48px 0", borderTop: "1px solid var(--line-dark)" }}>
+        <div className="wrap" style={{ display: "flex", justifyContent: "space-between", width: "100%", flexWrap: "wrap", gap: "14px", alignItems: "center" }}>
+          <span style={{ display: "block", lineHeight: "1.6" }}>Cataratas Bijagua Lodge · Upala, Costa Rica · Desde 2004</span>
+          <div className="social">
+            <a href="https://www.facebook.com/CataratasBijaguaLodge/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/cataratasbijagualodge/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.tripadvisor.com/Hotel_Review-g666791-d3468908-Reviews-Cataratas_Bijagua_Lodge-Bijagua_de_Upala_Province_of_Alajuela.html" target="_blank" rel="noopener">TripAdvisor</a>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
