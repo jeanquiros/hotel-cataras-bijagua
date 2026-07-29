@@ -132,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* GALLERY */}
-      <section className="tight" style={{ paddingLeft: 0, paddingRight: 0 }}>
+      <section className="tight" style={{ padding: "96px 0 0 0" }}>
         <div className="wrap" style={{ marginBottom: "52px", paddingLeft: "40px", paddingRight: "40px" }}>
           <p className="eyebrow">Galería</p>
           <h2 style={{ fontSize: "clamp(1.9rem, 3.4vw, 2.6rem)", maxWidth: "24ch" }}>Lo que se ve desde aquí</h2>
@@ -160,7 +160,7 @@ export default function Home() {
       </section>
 
       {/* LOCATION */}
-      <section className="loc-section" id="ubicacion" style={{ padding: 0 }}>
+      <section className="loc-section" id="ubicacion" style={{ padding: "0 0 0 0" }}>
         <div className="split">
           <div className="photo-block" style={{ minHeight: "500px" }}>
             <img
