@@ -160,24 +160,35 @@ export default function Home() {
       </section>
 
       {/* LOCATION */}
-      <section className="loc-section" id="ubicacion">
-        <div className="wrap" style={{ display: "grid", gridTemplateColumns: "0.85fr 1.15fr", gap: "90px", alignItems: "start" }}>
-          <div>
-            <p className="eyebrow">Ubicación</p>
-            <h2>Bijagua de Upala</h2>
-            <p style={{ marginTop: "24px", color: "var(--text-soft-dark)", fontSize: "1.05rem", fontWeight: 300, maxWidth: "54ch", lineHeight: "1.8" }}>
+      <section className="loc-section" id="ubicacion" style={{ padding: 0 }}>
+        <div className="split">
+          <div className="photo-block" style={{ minHeight: "500px" }}>
+            <img
+              src="https://s3-cdn.hotellinksolutions.com/hls/data/5542/gallery/thumbs/full_10_1643215838.jpg"
+              alt="Vista panorámica de Bijagua"
+              loading="lazy"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="copy" style={{ padding: "80px 64px" }}>
+            <p className="eyebrow on-dark">Ubicación</p>
+            <h2 style={{ color: "var(--ivory)", fontSize: "clamp(1.8rem, 3vw, 2.5rem)", marginBottom: "22px" }}>
+              Bijagua de Upala
+            </h2>
+            <p style={{ color: "var(--text-soft-light)", fontSize: "1rem", fontWeight: 300, maxWidth: "42ch", lineHeight: "1.7", marginBottom: "24px" }}>
               En las faldas del Parque Nacional Volcán Miravalles, provincia de Alajuela, a veinte minutos del Parque Nacional Volcán Tenorio. Suficientemente cerca de Liberia y La Fortuna para una escapada corta, suficientemente lejos para que el ritmo cambie de verdad.
             </p>
-          </div>
-          <div style={{ height: "160px", borderRadius: "2px", overflow: "hidden" }}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4504.369707705119!2d-85.05841853912191!3d10.727293111159558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQzJzM4LjIiTiA4NcKwMDMnMzEuMyJX!5e1!3m2!1sen!2scr!4v1"
-              width="100%" height="100%"
-              style={{ border: 0, filter: "saturate(0.3) sepia(0.1)" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            <div style={{ height: "200px", borderRadius: "2px", overflow: "hidden", filter: "saturate(0.3) sepia(0.1)" }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4504.369707705119!2d-85.05841853912191!3d10.727293111159558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQzJzM4LjIiTiA4NcKwMDMnMzEuMyJX!5e1!3m2!1sen!2scr!4v1"
+                width="100%" height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <p className="coords" style={{ marginTop: "12px", fontSize: "0.75rem" }}>10.7275° N, 85.0818° O</p>
           </div>
         </div>
       </section>
