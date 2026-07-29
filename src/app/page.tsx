@@ -107,6 +107,20 @@ export default function Home() {
         </div>
       </div>
 
+      {/* RESTAURANTE */}
+      <div className="split reverse" id="restaurante">
+        <div className="copy">
+          <p className="eyebrow on-dark">Restaurante</p>
+          <h2>Cocina típica, productos locales</h2>
+          <p>Nuestro restaurante sirve desayuno, almuerzo y cena con ingredientes de la región: verduras de Bijagua, queso fresco de Upala, pescado de la zona y las recetas que doña Flor ha perfeccionado en veinte años de cocina.</p>
+          <p>El comedor está abierto al bosque. Se come con vista a los jardines, entre el sonido de los pájaros y el aire fresco de la montaña.</p>
+        </div>
+        <div className="photo-block">
+          <img src="/images/restaurante-1.jpg" alt="Restaurante de Cataratas Bijagua Lodge" loading="lazy" />
+          <span className="photo-caption">Restaurante · Bijagua</span>
+        </div>
+      </div>
+
       {/* RIO CELESTE */}
       <section className="celeste-section" id="rio-celeste">
         <div className="wrap lede">
