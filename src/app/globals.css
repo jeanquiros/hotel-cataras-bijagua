@@ -101,6 +101,9 @@ img {
 .eyebrow.on-dark::before {
   background: var(--gold-soft);
 }
+.eyebrow.no-before::before {
+  display: none;
+}
 
 .wrap {
   max-width: 1220px;
