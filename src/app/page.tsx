@@ -182,6 +182,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CTA */}
+      <section className="cta" id="reservar">
+        <div className="wrap">
+          <div className="cta-inner">
+            <p className="eyebrow on-dark" style={{ justifyContent: "center" }}>Reservas</p>
+            <h2>Seis bungalows. Dos volcanes. Una sola vez que llegas.</h2>
+            <p>Escríbenos directamente para consultar disponibilidad y tarifas sin intermediarios.</p>
+            <a href="https://wa.me/50689374687" className="btn" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="tel:+50689374687" className="btn-outline">+506 8937 4687</a>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer style={{ background: "var(--ink-2)", padding: "34px 0", borderTop: "1px solid var(--line-dark)" }}>
         <div className="wrap" style={{ display: "flex", justifyContent: "space-between", width: "100%", flexWrap: "wrap", gap: "14px", alignItems: "center" }}>
