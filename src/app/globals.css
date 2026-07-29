@@ -84,25 +84,10 @@ img {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--gold);
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin-bottom: 22px;
-}
-.eyebrow::before {
-  content: "";
-  width: 26px;
-  height: 1px;
-  background: var(--gold);
 }
 .eyebrow.on-dark {
   color: var(--gold-soft);
-}
-.eyebrow.on-dark::before {
-  background: var(--gold-soft);
-}
-.eyebrow.no-before::before {
-  display: none;
 }
 
 .wrap {

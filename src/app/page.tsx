@@ -108,7 +108,7 @@ export default function Home() {
       {/* RESTAURANTE */}
       <div className="split reverse" id="restaurante">
         <div className="copy">
-          <p className="eyebrow on-dark no-before">Restaurante</p>
+          <p className="eyebrow on-dark">Restaurante</p>
           <h2>Cocina típica, productos locales</h2>
           <p>Nuestro restaurante sirve desayuno, almuerzo y cena con ingredientes de la región: verduras de Bijagua, queso fresco de Upala, pescado de la zona y las recetas que doña Flor ha perfeccionado en veinte años de cocina.</p>
           <p>El comedor está abierto al bosque. Se come con vista a los jardines, entre el sonido de los pájaros y el aire fresco de la montaña.</p>
