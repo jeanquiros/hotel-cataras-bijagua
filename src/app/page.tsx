@@ -172,7 +172,7 @@ export default function Home() {
               En las faldas del Parque Nacional Volcán Miravalles, provincia de Alajuela, a veinte minutos del Parque Nacional Volcán Tenorio. Suficientemente cerca de Liberia y La Fortuna para una escapada corta, suficientemente lejos para que el ritmo cambie de verdad.
             </p>
           </div>
-          <div style={{ height: "260px", borderRadius: "2px", overflow: "hidden" }}>
+          <div style={{ height: "160px", borderRadius: "2px", overflow: "hidden" }}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4504.369707705119!2d-85.05841853912191!3d10.727293111159558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQzJzM4LjIiTiA4NcKwMDMnMzEuMyJX!5e1!3m2!1sen!2scr!4v1"
               width="100%" height="100%"
