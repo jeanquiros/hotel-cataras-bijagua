@@ -1,10 +1,11 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { cabanas } from "@/data/cabanas";
-import { ArrowLeft, Wifi, Wind, Coffee, Shield, Tv, Bath, Snowflake, Martini } from "lucide-react";
-
+import Galeria from "@/components/Galeria";
+import { FadeUp, SlideLeft, SlideRight, StaggerContainer, StaggerItem } from "@/components/Animations";
+import { Wifi, Wind, Coffee, Shield, Tv, Bath, Snowflake, Martini } from "lucide-react";
 
 const amenityIcons: Record<string, React.ReactNode> = {
   "Cama King-size": <Wind size={18} />,
@@ -45,83 +46,107 @@ export default async function CabanaPage({ params }: { params: Promise<{ slug: s
   if (!cabana) notFound();
 
   const numericPrice = parseInt(cabana.price.replace("$", ""));
+  const related = cabanas.filter((c) => c.slug !== slug);
 
   return (
     <>
       <Header />
       <main className="bg-white">
-      <div className="relative h-[55vh] md:h-[65vh] bg-cover bg-center" style={{ backgroundImage: `url('${cabana.image}')` }}>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
-        <div className="absolute top-6 left-6 z-10">
-          <Link href="/cabanas" className="flex items-center gap-2 text-white/70 hover:text-white text-sm uppercase tracking-widest transition-colors">
-            <ArrowLeft size={16} /> Volver
-          </Link>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 max-w-6xl mx-auto px-6 pb-12">
-          <p className="text-luxury-gold text-sm uppercase tracking-[0.25em] mb-3">Cabaña</p>
-          <h1 className="text-5xl md:text-7xl font-heading font-bold text-white">{cabana.name}</h1>
-          <div className="flex items-center gap-4 mt-4">
-            <span className="text-luxury-gold font-heading text-3xl font-bold">{cabana.price}</span>
-            <span className="text-white/60 text-sm">/ noche</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-5 gap-12">
-          <div className="md:col-span-3">
-            <h2 className="font-heading text-2xl font-bold text-luxury-charcoal mb-4">Acerca de esta cabaña</h2>
-            <p className="text-gray-600 leading-relaxed text-lg">{cabana.fullDesc}</p>
-
-            <div className="mt-10">
-              <h3 className="font-heading text-xl font-bold text-luxury-charcoal mb-5">Galería</h3>
-              <div className="grid grid-cols-2 gap-3">
-                {cabana.images.map((src, i) => (
-                  <div key={i}
-                    className={`bg-cover bg-center rounded-sm ${i === 0 ? "col-span-2 aspect-[16/7]" : "aspect-square"}`}
-                    style={{ backgroundImage: `url('${src}')` }} />
-                ))}
-              </div>
+        <div className="relative h-[55vh] md:h-[65vh] bg-cover bg-center" style={{ backgroundImage: `url('${cabana.image}')` }}>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
+          <div className="absolute bottom-0 left-0 right-0 max-w-6xl mx-auto px-6 pb-12">
+            <div className="flex items-center gap-2 text-white/50 text-xs uppercase tracking-wider mb-3">
+              <Link href="/" className="hover:text-luxury-gold transition-colors">Inicio</Link>
+              <span>/</span>
+              <Link href="/cabanas" className="hover:text-luxury-gold transition-colors">Cabañas</Link>
+              <span>/</span>
+              <span className="text-white/80">{cabana.name}</span>
+            </div>
+            <p className="text-luxury-gold text-sm uppercase tracking-[0.25em] mb-3">Cabaña</p>
+            <h1 className="text-5xl md:text-7xl font-heading font-bold text-white">{cabana.name}</h1>
+            <div className="flex items-center gap-4 mt-4">
+              <span className="text-luxury-gold font-heading text-3xl font-bold">{cabana.price}</span>
+              <span className="text-white/60 text-sm">/ noche</span>
             </div>
           </div>
+        </div>
 
-          <div className="md:col-span-2">
-            <div className="bg-luxury-warm p-8">
-              <h3 className="font-heading text-lg font-bold text-luxury-charcoal mb-5">Amenidades</h3>
-              <ul className="space-y-4">
-                {cabana.amenities.map((a) => (
-                  <li key={a} className="flex items-center gap-3 text-sm text-gray-700">
-                    <span className="text-luxury-gold shrink-0">{amenityIcons[a] || <Wind size={18} />}</span>
-                    {a}
-                  </li>
-                ))}
-              </ul>
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-5 gap-12">
+            <SlideLeft className="md:col-span-3">
+              <div>
+                <h2 className="font-heading text-2xl font-bold text-luxury-charcoal mb-4">Acerca de esta cabaña</h2>
+                <p className="text-gray-600 leading-relaxed text-lg">{cabana.fullDesc}</p>
 
-              <div className="border-t border-gray-200 mt-6 pt-6">
-                <h4 className="font-heading text-base font-bold text-luxury-charcoal mb-3">Características</h4>
-                <div className="flex flex-wrap gap-2">
-                  {cabana.features.map((f) => (
-                    <span key={f} className="text-xs bg-white px-3 py-1.5 text-gray-600 border border-gray-200">{f}</span>
-                  ))}
+                <div className="mt-10">
+                  <h3 className="font-heading text-xl font-bold text-luxury-charcoal mb-5">Galería</h3>
+                  <Galeria images={cabana.images} />
                 </div>
               </div>
+            </SlideLeft>
 
-              <div className="border-t border-gray-200 mt-6 pt-6">
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Precio por noche</p>
-                <p className="font-heading text-3xl font-bold text-luxury-gold">${numericPrice}</p>
+            <SlideRight className="md:col-span-2">
+              <div className="bg-luxury-warm p-8">
+                <h3 className="font-heading text-lg font-bold text-luxury-charcoal mb-5">Amenidades</h3>
+                <ul className="space-y-4">
+                  {cabana.amenities.map((a) => (
+                    <li key={a} className="flex items-center gap-3 text-sm text-gray-700">
+                      <span className="text-luxury-gold shrink-0">{amenityIcons[a] || <Wind size={18} />}</span>
+                      {a}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="border-t border-gray-200 mt-6 pt-6">
+                  <h4 className="font-heading text-base font-bold text-luxury-charcoal mb-3">Características</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {cabana.features.map((f) => (
+                      <span key={f} className="text-xs bg-white px-3 py-1.5 text-gray-600 border border-gray-200">{f}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-t border-gray-200 mt-6 pt-6">
+                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Precio por noche</p>
+                  <p className="font-heading text-3xl font-bold text-luxury-gold">${numericPrice}</p>
+                </div>
+
+                <a
+                  href="/contacto"
+                  className="mt-6 block w-full text-center bg-luxury-gold text-white px-6 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold-dark transition-all duration-300"
+                >
+                  Reservar — ${numericPrice}
+                </a>
               </div>
-
-              <a
-                href="/ubicacion"
-                className="mt-6 block w-full text-center bg-luxury-gold text-white px-6 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold-dark transition-all duration-300"
-              >
-                Reservar — ${numericPrice}
-              </a>
-            </div>
+            </SlideRight>
           </div>
         </div>
-      </div>
-    </main>
+
+        <FadeUp>
+          <section className="border-t border-gray-100 py-20 px-6 bg-luxury-warm">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <p className="text-luxury-gold text-sm font-medium uppercase tracking-[0.25em] mb-3">Cabañas</p>
+                <h2 className="text-3xl font-heading font-bold text-luxury-charcoal">Otras cabañas</h2>
+                <div className="w-12 h-0.5 bg-luxury-gold mx-auto mt-3" />
+              </div>
+              <StaggerContainer className="grid md:grid-cols-3 gap-6">
+                {related.map((c) => (
+                  <StaggerItem key={c.slug}>
+                    <Link href={`/cabanas/${c.slug}`} className="group block">
+                      <div className="aspect-[4/3] bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('${c.image}')` }} />
+                      <div className="p-4 bg-white">
+                        <h3 className="font-heading font-bold text-luxury-charcoal group-hover:text-luxury-gold transition-colors">{c.name}</h3>
+                        <span className="text-luxury-gold text-sm font-heading font-bold">{c.price}</span>
+                      </div>
+                    </Link>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </div>
+          </section>
+        </FadeUp>
+      </main>
       <Footer />
     </>
   );

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ClientLayout from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
-  title: "Hotel Cataras Bijagua | Luxury Eco-Lodge in Costa Rica",
+  title: "Cataratas Bijagua Lodge — Entre Miravalles y Tenorio",
   description:
-    "Experience luxury eco-lodging in Bijagua de Upala. Surrounded by Miravalles and Tenorio Volcano National Parks.",
+    "Bungalows de montaña en Bijagua de Upala, a las puertas del Parque Nacional Volcán Miravalles y a veinte minutos del Río Celeste.",
 };
 
 export default function RootLayout({
@@ -13,9 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-luxury-cream text-luxury-charcoal font-body">
-        {children}
+    <html lang="es" className="h-full antialiased">
+      <body className="min-h-full flex flex-col">
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

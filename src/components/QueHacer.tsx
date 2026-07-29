@@ -1,3 +1,7 @@
+"use client";
+
+import { FadeUp, StaggerContainer, StaggerItem } from "./Animations";
+
 const actividades = [
   {
     titulo: "Sendero Cataratas Bijagua",
@@ -42,41 +46,47 @@ export default function QueHacer() {
   return (
     <section className="py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-luxury-gold text-sm font-medium uppercase tracking-[0.25em] mb-3">
-            Qué hacer
-          </p>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-luxury-charcoal">
-            Actividades y Aventuras
-          </h2>
-          <div className="w-16 h-0.5 bg-luxury-gold mx-auto mt-4" />
-        </div>
+        <FadeUp>
+          <div className="text-center mb-14">
+            <p className="text-luxury-gold text-sm font-medium uppercase tracking-[0.25em] mb-3">
+              Qué hacer
+            </p>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-luxury-charcoal">
+              Actividades y Aventuras
+            </h2>
+            <div className="w-16 h-0.5 bg-luxury-gold mx-auto mt-4" />
+          </div>
+        </FadeUp>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
+        <StaggerContainer className="grid md:grid-cols-2 gap-8 mb-20">
           {actividades.map((a) => (
-            <div key={a.titulo} className="flex gap-5 group">
-              <div
-                className="w-32 h-32 shrink-0 bg-cover bg-center rounded-sm"
-                style={{ backgroundImage: `url('${a.image}')` }}
-              />
-              <div>
-                <h3 className="font-heading text-lg font-bold text-luxury-charcoal mb-1">{a.titulo}</h3>
-                <span className="text-xs text-luxury-gold uppercase tracking-wider">{a.nivel}</span>
-                <p className="text-gray-600 text-sm leading-relaxed mt-2">{a.desc}</p>
+            <StaggerItem key={a.titulo}>
+              <div className="flex gap-5 group">
+                <div
+                  className="w-32 h-32 shrink-0 bg-cover bg-center rounded-sm"
+                  style={{ backgroundImage: `url('${a.image}')` }}
+                />
+                <div>
+                  <h3 className="font-heading text-lg font-bold text-luxury-charcoal mb-1">{a.titulo}</h3>
+                  <span className="text-xs text-luxury-gold uppercase tracking-wider">{a.nivel}</span>
+                  <p className="text-gray-600 text-sm leading-relaxed mt-2">{a.desc}</p>
+                </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
-        <div className="text-center mb-10">
-          <p className="text-luxury-gold text-sm font-medium uppercase tracking-[0.25em] mb-3">
-            Galería
-          </p>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-luxury-charcoal">
-            Fotos del Lugar
-          </h2>
-          <div className="w-16 h-0.5 bg-luxury-gold mx-auto mt-4" />
-        </div>
+        <FadeUp>
+          <div className="text-center mb-10">
+            <p className="text-luxury-gold text-sm font-medium uppercase tracking-[0.25em] mb-3">
+              Galería
+            </p>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-luxury-charcoal">
+              Fotos del Lugar
+            </h2>
+            <div className="w-16 h-0.5 bg-luxury-gold mx-auto mt-4" />
+          </div>
+        </FadeUp>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {fotos.map((src, i) => (

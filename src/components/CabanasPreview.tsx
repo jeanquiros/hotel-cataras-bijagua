@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { FadeUp, StaggerContainer, StaggerItem } from "./Animations";
 
 const preview = [
   {
@@ -25,45 +28,51 @@ export default function CabanasPreview() {
   return (
     <section className="py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-luxury-gold text-sm font-medium uppercase tracking-[0.25em] mb-3">
-            Cabañas
-          </p>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-luxury-charcoal">
-            Nuestras Cabañas
-          </h2>
-          <div className="w-16 h-0.5 bg-luxury-gold mx-auto mt-4" />
-        </div>
+        <FadeUp>
+          <div className="text-center mb-14">
+            <p className="text-luxury-gold text-sm font-medium uppercase tracking-[0.25em] mb-3">
+              Cabañas
+            </p>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-luxury-charcoal">
+              Nuestras Cabañas
+            </h2>
+            <div className="w-16 h-0.5 bg-luxury-gold mx-auto mt-4" />
+          </div>
+        </FadeUp>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <StaggerContainer className="grid md:grid-cols-3 gap-6">
           {preview.map((b) => (
-            <Link key={b.name} href="/cabanas" className="group relative overflow-hidden block">
-              <div
-                className="aspect-[4/5] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
-                style={{ backgroundImage: `url('${b.image}')` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <h3 className="text-white font-heading text-xl font-bold">{b.name}</h3>
-                <p className="text-luxury-gold text-sm mt-1">{b.price} / noche</p>
-              </div>
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="border-2 border-white text-white px-6 py-2 text-sm font-medium uppercase tracking-widest hover:bg-white hover:text-luxury-charcoal transition-colors">
-                  Ver detalles
-                </span>
-              </div>
-            </Link>
+            <StaggerItem key={b.name}>
+              <Link href="/cabanas" className="group relative overflow-hidden block">
+                <div
+                  className="aspect-[4/5] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+                  style={{ backgroundImage: `url('${b.image}')` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className="text-white font-heading text-xl font-bold">{b.name}</h3>
+                  <p className="text-luxury-gold text-sm mt-1">{b.price} / noche</p>
+                </div>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="border-2 border-white text-white px-6 py-2 text-sm font-medium uppercase tracking-widest hover:bg-white hover:text-luxury-charcoal transition-colors">
+                    Ver detalles
+                  </span>
+                </div>
+              </Link>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
-        <div className="text-center mt-10">
-          <Link
-            href="/cabanas"
-            className="inline-block border-2 border-luxury-gold text-luxury-gold px-8 py-2.5 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold hover:text-luxury-charcoal transition-all duration-300"
-          >
-            Ver todos
-          </Link>
-        </div>
+        <FadeUp delay={0.3}>
+          <div className="text-center mt-10">
+            <Link
+              href="/cabanas"
+              className="inline-block border-2 border-luxury-gold text-luxury-gold px-8 py-2.5 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold hover:text-white transition-all duration-300"
+            >
+              Ver todos
+            </Link>
+          </div>
+        </FadeUp>
       </div>
     </section>
   );
