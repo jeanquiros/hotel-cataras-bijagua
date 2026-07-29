@@ -111,12 +111,7 @@ export default async function CabanaPage({ params }: { params: Promise<{ slug: s
                   <p className="font-heading text-3xl font-bold text-luxury-gold">${numericPrice}</p>
                 </div>
 
-                <a
-                  href="/contacto"
-                  className="mt-6 block w-full text-center bg-luxury-gold text-white px-6 py-3 text-sm font-medium uppercase tracking-widest hover:bg-luxury-gold-dark transition-all duration-300"
-                >
-                  Reservar — ${numericPrice}
-                </a>
+
               </div>
             </SlideRight>
           </div>

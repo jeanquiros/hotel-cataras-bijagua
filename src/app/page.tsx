@@ -60,7 +60,7 @@ export default function Home() {
           </div>
           <div>
             <p>Cataratas Bijagua Lodge comenzó cuando un grupo de familiares decidió construir, a mano y en su propia tierra, un lugar donde los visitantes pudieran sentirse parte de la familia. Dos décadas después, seguimos siendo eso: una propiedad pequeña, gestionada de cerca, con un compromiso serio con el turismo rural y la conservación del bosque que nos rodea.</p>
-            <p>Un sendero propio bordea la finca y se interna en el Parque Nacional Volcán Miravalles hasta llegar a las cataratas del río Bijagua — la razón por la que existimos.</p>
+            <p>Un sendero propio bordea la finca y se interna en el Parque Nacional Volcán Miravalles hasta llegar a las cataratas del río Bijagua, la razón por la que existimos.</p>
           </div>
         </div>
       </section>
@@ -74,7 +74,6 @@ export default function Home() {
             loading="lazy"
             referrerPolicy="no-referrer"
           />
-          <span className="photo-caption">Bungalows · Bijagua</span>
         </div>
         <div className="copy">
           <p className="eyebrow on-dark">Alojamiento</p>
@@ -103,7 +102,6 @@ export default function Home() {
             loading="lazy"
             referrerPolicy="no-referrer"
           />
-          <span className="photo-caption">Catarata del Río Bijagua</span>
         </div>
       </div>
 
@@ -117,7 +115,6 @@ export default function Home() {
         </div>
         <div className="photo-block">
           <img src="/images/restaurante-1.jpg" alt="Restaurante de Cataratas Bijagua Lodge" loading="lazy" />
-          <span className="photo-caption">Restaurante · Bijagua</span>
         </div>
       </div>
 
@@ -129,7 +126,7 @@ export default function Home() {
             <h2>El color que solo existe en el Río Celeste</h2>
           </div>
           <div>
-            <p>A quince kilómetros del lodge, dentro del Parque Nacional Volcán Tenorio, el Río Celeste debe su tono turquesa a una reacción óptica: la mezcla de azufre y carbonato de calcio en sus aguas, entre vegetación exuberante y aguas termales cercanas. Es una de las cataratas más fotografiadas de Costa Rica — y la usamos como color de firma de esta casa.</p>
+            <p>A quince kilómetros del lodge, dentro del Parque Nacional Volcán Tenorio, el Río Celeste debe su tono turquesa a una reacción óptica: la mezcla de azufre y carbonato de calcio en sus aguas, entre vegetación exuberante y aguas termales cercanas. Es una de las cataratas más fotografiadas de Costa Rica, y la usamos como color de firma de esta casa.</p>
           </div>
         </div>
       </section>
