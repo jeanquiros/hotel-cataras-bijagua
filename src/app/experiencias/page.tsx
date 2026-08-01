@@ -66,13 +66,13 @@ export default function Experiencias() {
           <div className="g2">
             <img src="/images/sendero/sendero-3.jpg" alt="Bosque nuboso" loading="lazy" />
           </div>
-          <div className="g3">
+          <div className="g2">
             <img src="https://s3-cdn.hotellinksolutions.com/hls/data/5542/gallery/thumbs/full_8_1643215759._1643215759.jpg" alt="Catarata del río Bijagua" loading="lazy" referrerPolicy="no-referrer" />
           </div>
-          <div className="g3">
+          <div className="g2">
             <img src="https://s3-cdn.hotellinksolutions.com/hls/data/5542/gallery/thumbs/full_10_1643215838.jpg" alt="Catarata Bijagua" loading="lazy" referrerPolicy="no-referrer" />
           </div>
-          <div className="g3">
+          <div className="g2">
             <img src="/images/sendero/sendero-4.jpg" alt="Sendero hacia las cataratas" loading="lazy" />
           </div>
         </div>
