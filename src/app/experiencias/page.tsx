@@ -16,7 +16,7 @@ export default function Experiencias() {
         </div>
       </header>
 
-      <section className="tight">
+      <section className="tight" style={{ padding: "64px 0" }}>
         <div className="wrap lede">
           <div>
             <p className="eyebrow">Sendero de las Cataratas</p>
@@ -30,7 +30,7 @@ export default function Experiencias() {
         </div>
       </section>
 
-      <section className="split" style={{ display: "grid" }}>        <div className="copy">
+      <section className="split" style={{ display: "grid", padding: 0 }}>        <div className="copy">
           <p className="eyebrow on-dark">La caída</p>
           <h2>Quince metros de agua que nacen del volcán</h2>
           <p>El sendero termina donde empieza la razón del lodge: la catarata Bijagua, alimentada por las faldas del Volcán Miravalles. En temporada verde el caudal es generoso y las pozas invitan a quedarse.</p>
@@ -45,7 +45,7 @@ export default function Experiencias() {
         </div>
       </section>
 
-      <section className="celeste-section" style={{ padding: "110px 0" }}>
+      <section className="celeste-section" style={{ padding: "96px 0" }}>
         <div className="wrap lede">
           <div>
             <p className="eyebrow">De noche</p>
@@ -58,7 +58,7 @@ export default function Experiencias() {
         </div>
       </section>
 
-      <section className="tight" style={{ paddingTop: 0 }}>
+      <section className="tight" style={{ padding: "64px 0 0" }}>
         <div className="gallery" style={{ gridAutoRows: "300px" }}>
           <div className="g1">
             <img src="/images/sendero/sendero-1.jpg" alt="Sendero hacia las cataratas" loading="lazy" />
@@ -78,7 +78,7 @@ export default function Experiencias() {
         </div>
       </section>
 
-      <section className="cta" style={{ padding: "110px 0 120px" }}>
+      <section className="cta" style={{ padding: "96px 0 110px" }}>
         <div className="cta-inner" style={{ paddingBottom: 0 }}>
           <p className="eyebrow">Cataratas Bijagua Lodge</p>
           <h2>La montaña no necesita plan, solo presencialidad.</h2>
