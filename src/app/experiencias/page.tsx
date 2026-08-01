@@ -30,12 +30,7 @@ export default function Experiencias() {
         </div>
       </section>
 
-      <div className="photo-block" style={{ height: "80vh" }}>
-        <img src="/images/sendero/sendero-2.jpg" alt="Sendero entre el bosque" loading="lazy" />
-      </div>
-
-      <section className="split" style={{ display: "grid" }}>
-        <div className="copy">
+      <section className="split" style={{ display: "grid" }}>        <div className="copy">
           <p className="eyebrow on-dark">La caída</p>
           <h2>Quince metros de agua que nacen del volcán</h2>
           <p>El sendero termina donde empieza la razón del lodge: la catarata Bijagua, alimentada por las faldas del Volcán Miravalles. En temporada verde el caudal es generoso y las pozas invitan a quedarse.</p>
