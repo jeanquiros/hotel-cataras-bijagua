@@ -16,7 +16,7 @@ export default function Experiencias() {
         </div>
       </header>
 
-      <section className="tight" style={{ padding: "64px 0" }}>
+      <section className="tight" style={{ padding: "48px 0" }}>
         <div className="wrap lede">
           <div>
             <p className="eyebrow">Sendero de las Cataratas</p>
@@ -25,7 +25,7 @@ export default function Experiencias() {
           <div>
             <p>Un sendero privado que nace en el lodge y desciende hasta las cataratas del río Bijagua, una caída de 15 metros de agua cristalina rodeada de bosque nuboso, de transición y lluvioso premontano.</p>
             <p>En el camino, tres miradores con vista al valle de Bijagua, dos puentes colgantes y pozas donde detenerse a nadar. Se recorre en dos a tres horas, sin guía.</p>
-            <p className="coords" style={{ color: "var(--gold)", marginTop: "18px" }}>Salí temprano · Llevá repelente y agua · Zapatos cerrados</p>
+            <p className="coords" style={{ color: "var(--gold)", marginTop: "14px" }}>Salí temprano · Llevá repelente y agua · Zapatos cerrados</p>
           </div>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function Experiencias() {
         </div>
       </section>
 
-      <section className="celeste-section" style={{ padding: "96px 0" }}>
+      <section className="celeste-section" style={{ padding: "80px 0" }}>
         <div className="wrap lede">
           <div>
             <p className="eyebrow">De noche</p>
@@ -58,8 +58,8 @@ export default function Experiencias() {
         </div>
       </section>
 
-      <section className="tight" style={{ padding: "64px 0 0" }}>
-        <div className="gallery" style={{ gridAutoRows: "300px" }}>
+      <section className="tight" style={{ padding: "48px 0 0" }}>
+        <div className="gallery" style={{ gridAutoRows: "280px" }}>
           <div className="g1">
             <img src="/images/sendero/sendero-1.jpg" alt="Sendero hacia las cataratas" loading="lazy" />
           </div>
@@ -78,7 +78,7 @@ export default function Experiencias() {
         </div>
       </section>
 
-      <section className="cta" style={{ padding: "96px 0 110px" }}>
+      <section className="cta" style={{ padding: "80px 0 96px" }}>
         <div className="cta-inner" style={{ paddingBottom: 0 }}>
           <p className="eyebrow">Cataratas Bijagua Lodge</p>
           <h2>La montaña no necesita plan, solo presencialidad.</h2>
