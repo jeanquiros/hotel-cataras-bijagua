@@ -1,0 +1,19 @@
+
+> hotel-cataras-bijagua@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.183:3000
+✓ Ready in 377ms
+
+ GET / 200 in 441ms (next.js: 240ms, application-code: 201ms)
+ GET /experiencias 200 in 55ms (next.js: 31ms, application-code: 24ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /cabanas 200 in 125ms (next.js: 67ms, application-code: 58ms)
+[browser] An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string. 
+[browser] An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string. 
+ GET /contacto 200 in 92ms (next.js: 55ms, application-code: 37ms)
+ GET /experiencias 200 in 36ms (next.js: 10ms, application-code: 26ms)
+✓ Compiled in 848ms
+ GET /experiencias 200 in 485ms (next.js: 350ms, application-code: 135ms)
