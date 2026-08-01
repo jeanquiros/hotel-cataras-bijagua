@@ -59,21 +59,23 @@ export default function Experiencias() {
       </section>
 
       <section className="tight" style={{ padding: "48px 0 0" }}>
-        <div className="gallery" style={{ gridAutoRows: "280px" }}>
-          <div className="g1">
-            <img src="/images/sendero/sendero-1.jpg" alt="Sendero hacia las cataratas" loading="lazy" />
-          </div>
-          <div className="g2">
-            <img src="/images/sendero/sendero-3.jpg" alt="Bosque nuboso" loading="lazy" />
-          </div>
-          <div className="g2">
-            <img src="https://s3-cdn.hotellinksolutions.com/hls/data/5542/gallery/thumbs/full_8_1643215759._1643215759.jpg" alt="Catarata del río Bijagua" loading="lazy" referrerPolicy="no-referrer" />
-          </div>
-          <div className="g2">
-            <img src="https://s3-cdn.hotellinksolutions.com/hls/data/5542/gallery/thumbs/full_10_1643215838.jpg" alt="Catarata Bijagua" loading="lazy" referrerPolicy="no-referrer" />
-          </div>
-          <div className="g2">
-            <img src="/images/sendero/sendero-4.jpg" alt="Sendero hacia las cataratas" loading="lazy" />
+        <div className="wrap" style={{ display: "block" }}>
+          <div style={{ columnCount: 3, columnGap: "6px" }} className="masonry">
+            <div style={{ marginBottom: "6px", breakInside: "avoid" }}>
+              <img src="/images/sendero/sendero-1.jpg" alt="Sendero hacia las cataratas" loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ marginBottom: "6px", breakInside: "avoid" }}>
+              <img src="/images/sendero/sendero-3.jpg" alt="Bosque nuboso" loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ marginBottom: "6px", breakInside: "avoid" }}>
+              <img src="https://s3-cdn.hotellinksolutions.com/hls/data/5542/gallery/thumbs/full_8_1643215759._1643215759.jpg" alt="Catarata del río Bijagua" loading="lazy" referrerPolicy="no-referrer" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ marginBottom: "6px", breakInside: "avoid" }}>
+              <img src="https://s3-cdn.hotellinksolutions.com/hls/data/5542/gallery/thumbs/full_10_1643215838.jpg" alt="Catarata Bijagua" loading="lazy" referrerPolicy="no-referrer" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ marginBottom: "6px", breakInside: "avoid" }}>
+              <img src="/images/sendero/sendero-4.jpg" alt="Sendero hacia las cataratas" loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
           </div>
         </div>
       </section>
