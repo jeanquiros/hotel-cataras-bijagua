@@ -3,7 +3,12 @@
 export default function Experiencias() {
   return (
     <>
-      <header className="hero" style={{ height: "70vh", minHeight: "460px", alignItems: "flex-end" }}>
+      <header className="hero" style={{
+        height: "70vh",
+        minHeight: "460px",
+        alignItems: "flex-end",
+        background: "linear-gradient(180deg, rgba(9,15,13,0.25) 0%, rgba(9,15,13,0.10) 40%, rgba(9,15,13,0.70) 100%), url('/images/sendero/hero-experiencias.jpg') center/cover no-repeat",
+      }}>
         <div className="hero-content" style={{ paddingBottom: "64px" }}>
           <p className="eyebrow">Experiencias</p>
           <h1>El bosque es nuestro vecino</h1>
