@@ -72,6 +72,9 @@ export default function Experiencias() {
           <div className="g3">
             <img src="https://s3-cdn.hotellinksolutions.com/hls/data/5542/gallery/thumbs/full_10_1643215838.jpg" alt="Catarata Bijagua" loading="lazy" referrerPolicy="no-referrer" />
           </div>
+          <div className="g3">
+            <img src="/images/sendero/sendero-4.jpg" alt="Sendero hacia las cataratas" loading="lazy" />
+          </div>
         </div>
       </section>
 
