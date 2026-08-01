@@ -117,7 +117,10 @@ nav {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   background: linear-gradient(180deg, rgba(15, 26, 22, 0.55), rgba(15, 26, 22, 0));
-  transition: background 0.3s;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s;
+}
+nav.nav-hide {
+  transform: translateY(-110%);
 }
 nav .brand {
   font-family: "Fraunces", serif;
