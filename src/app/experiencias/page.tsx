@@ -24,6 +24,20 @@ export default function Experiencias() {
           </div>
         </div>
       </section>
+
+      <section className="tight" style={{ paddingTop: 0 }}>
+        <div className="gallery" style={{ gridAutoRows: "260px" }}>
+          <div className="g1">
+            <img src="/images/sendero/sendero-1.jpg" alt="Sendero hacia las cataratas" loading="lazy" />
+          </div>
+          <div className="g2">
+            <img src="/images/sendero/sendero-2.jpg" alt="Sendero hacia las cataratas" loading="lazy" />
+          </div>
+          <div className="g3">
+            <img src="/images/sendero/sendero-3.jpg" alt="Sendero hacia las cataratas" loading="lazy" />
+          </div>
+        </div>
+      </section>
     </>
   );
 }
