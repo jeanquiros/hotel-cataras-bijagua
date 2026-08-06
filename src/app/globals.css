@@ -465,6 +465,65 @@ section.tight {
   letter-spacing: 0.04em;
 }
 
+/* ---------- CONTACTO ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: stretch;
+}
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+.contact-list {
+  margin-top: 42px;
+  border-top: 1px solid var(--line-dark);
+}
+.contact-row {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line-dark);
+}
+.contact-row .label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  width: 130px;
+  flex-shrink: 0;
+}
+.contact-row .value {
+  color: var(--text-soft-dark);
+  font-weight: 300;
+  font-size: 1.05rem;
+}
+.contact-row a.value {
+  transition: color 0.25s;
+}
+.contact-row a.value:hover {
+  color: var(--gold);
+}
+.map-frame {
+  border: 1px solid var(--line-dark);
+  padding: 8px;
+  height: 100%;
+  min-height: 480px;
+}
+.map-frame iframe {
+  filter: grayscale(0.55) contrast(1.05);
+  transition: filter 0.5s ease;
+  display: block;
+}
+.map-frame:hover iframe {
+  filter: grayscale(0);
+}
+
 /* ---------- CTA ---------- */
 .cta {
   background: var(--ink);
