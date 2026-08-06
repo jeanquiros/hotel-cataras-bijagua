@@ -1,6 +1,6 @@
 "use client";
 
-import { FadeUp, SlideLeft, SlideRight } from "../../components/Animations";
+import { FadeUp, SlideLeft } from "../../components/Animations";
 
 export default function Contacto() {
   return (
@@ -15,7 +15,7 @@ export default function Contacto() {
       </header>
 
       <section className="tight" style={{ padding: "110px 0" }}>
-        <div className="wrap contact-grid">
+        <div className="wrap" style={{ maxWidth: "860px", margin: "0 auto" }}>
           <SlideLeft>
             <div>
               <p className="eyebrow">Dónde estamos</p>
@@ -48,21 +48,6 @@ export default function Contacto() {
               </div>
             </div>
           </SlideLeft>
-
-          <SlideRight>
-            <div className="map-frame">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.579358153899!2d-85.08402768457912!3d10.727545060394528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f9e8f1b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sCataratas%20Bijagua%20Lodge!5e0!3m2!1sen!2scr!4v1!4m1!1s0x8f9e8f1b8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación Cataratas Bijagua Lodge"
-              />
-            </div>
-          </SlideRight>
         </div>
       </section>
 
