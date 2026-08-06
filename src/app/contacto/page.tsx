@@ -57,8 +57,9 @@ export default function Contacto() {
             <div><span>A pie</span><small>Sendero a las cataratas</small></div>
           </div>
         </div>
-        <div className="photo-block">
+        <div className="photo-block hover-swap">
           <img src="/images/sendero/sendero-2.jpg" alt="Bosque en Bijagua de Upala" loading="lazy" />
+          <img src="/images/hover-vista.jpg" alt="Vista del bosque y el valle" loading="lazy" className="hover-img" />
         </div>
       </section>
 
