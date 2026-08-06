@@ -478,10 +478,10 @@ section.tight {
   border-bottom: 1px solid var(--line-dark);
 }
 .contact-row .label {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.66rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-family: "Public Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: var(--gold);
   width: 130px;
   flex-shrink: 0;

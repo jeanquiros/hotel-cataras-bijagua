@@ -10,7 +10,6 @@ export default function Contacto() {
           <p className="eyebrow">Contacto</p>
           <h1>Hablemos antes de que llegues</h1>
           <p className="hero-sub">Escribinos por WhatsApp, llamá o pasate a conocer el lodge. Respondemos siempre, de una u otra forma.</p>
-          <p className="coords" style={{ marginTop: "16px", color: "var(--gold-soft)" }}>10.7275° N, 85.0818° O · Bijagua de Upala</p>
         </div>
       </header>
 
@@ -40,10 +39,6 @@ export default function Contacto() {
                 <div className="contact-row">
                   <span className="label">Dirección</span>
                   <span className="value">Bijagua de Upala, Alajuela, Costa Rica</span>
-                </div>
-                <div className="contact-row">
-                  <span className="label">Coordenadas</span>
-                  <span className="value" style={{ fontFamily: '"JetBrains Mono", monospace', fontSize: "0.9rem", color: "var(--gold)" }}>10.7275° N · 85.0818° O</span>
                 </div>
               </div>
             </div>
